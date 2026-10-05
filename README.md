@@ -112,7 +112,7 @@ This repository is intended to support a collaborative workflow with SIMIP contr
 ## Current contributors
 
 - Alek Petty ([@akpetty](https://github.com/akpetty))
-- Chris Cardinale ([@ccardinale](https://github.com/ccardinale))
+- Chris Cardinale ([@cjcardinale](https://github.com/cjcardinale))
 
 ## License
 
