@@ -1,0 +1,8 @@
+# Project defaults
+
+This file can hold reusable defaults for datasets, output naming, and analysis settings.
+
+```yaml
+project_name: "cmip7-sea-ice-data"
+analysis_timezone: "UTC"
+```

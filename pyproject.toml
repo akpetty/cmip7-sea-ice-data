@@ -1,0 +1,36 @@
+[project]
+name = "cmip7-sea-ice-data"
+version = "0.1.0"
+description = "CMIP7 sea ice data workflows in collaboration with SIMIP."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26",
+  "xarray>=2024.3.0",
+  "pandas>=2.2",
+  "matplotlib>=3.8",
+  "scipy>=1.11",
+  "dask>=2024.4.0",
+  "zarr>=2.18",
+  "netCDF4>=1.7",
+  "cartopy>=0.22",
+  "cfgrib>=0.9.10",
+  "jupyterlab>=4.2",
+  "ipykernel>=6.29",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5.0",
+  "pre-commit>=3.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]

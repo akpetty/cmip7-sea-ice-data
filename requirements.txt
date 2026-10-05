@@ -1,0 +1,12 @@
+numpy
+pandas
+xarray
+matplotlib
+scipy
+dask
+zarr
+netCDF4
+cartopy
+cfgrib
+jupyterlab
+ipykernel

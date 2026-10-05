@@ -1,0 +1,20 @@
+name: cmip7-sea-ice-data
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - pandas
+  - xarray
+  - dask
+  - zarr
+  - scipy
+  - matplotlib
+  - cartopy
+  - netcdf4
+  - jupyterlab
+  - ipykernel
+  - pip:
+      - cfgrib

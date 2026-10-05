@@ -1,0 +1,13 @@
+# S3 paths
+
+This file documents project storage conventions for cloud-hosted data.
+
+Example:
+
+```yaml
+bucket: "example-bucket"
+base_prefix: "cmip7-sea-ice"
+raw_prefix: "raw"
+processed_prefix: "processed"
+figures_prefix: "figures"
+```
