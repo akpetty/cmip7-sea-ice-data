@@ -9,6 +9,12 @@ This project is intended to support reproducible workflows for:
 - diagnostic summaries and comparison workflows
 - figure generation for reports, papers, and working-group outputs
 
+## History
+
+This repository was created to help SIMIP contributors work with CMIP7 sea ice data in a consistent and reproducible way. The initial focus is on making remote data access straightforward and providing a lightweight set of shared analysis and plotting workflows that can be adapted for collaborative diagnostics.
+
+The project is intentionally lightweight and exploratory at this stage: most work is centered on notebooks, reproducible data-access checks, and shared plotting patterns rather than a large package API.
+
 ## Repository structure
 
 ```text
@@ -21,55 +27,17 @@ cmip7-sea-ice-data/
 ├── requirements.txt
 ├── notebooks/
 │   ├── README.md
-│   ├── 00_getting_started/
-│   │   └── README.md
 │   ├── 01_data_access/
 │   │   └── README.md
-│   ├── 02_processing/
-│   │   └── README.md
-│   ├── 03_analysis/
-│   │   └── README.md
-│   └── 04_plotting/
+│   └── 02_plotting/
 │       └── README.md
 ├── scripts/
-│   ├── README.md
-│   ├── data_access/
-│   │   └── README.md
-│   ├── preprocessing/
-│   │   └── README.md
-│   ├── diagnostics/
-│   │   └── README.md
-│   └── plotting/
-│       └── README.md
 ├── data/
-│   ├── README.md
-│   ├── raw/
-│   │   └── README.md
-│   ├── processed/
-│   │   └── README.md
-│   └── metadata/
-│       └── README.md
 ├── results/
-│   ├── README.md
-│   ├── figures/
-│   │   └── README.md
-│   ├── outputs/
-│   │   └── README.md
-│   └── summaries/
-│       └── README.md
 ├── docs/
-│   ├── README.md
-│   ├── conventions.md
-│   ├── data_access.md
-│   └── workflow.md
 ├── config/
-│   ├── README.md
-│   ├── s3_paths.yml
-│   └── project_defaults.yml
 ├── src/
-│   └── README.md
 └── tests/
-    └── README.md
 ```
 
 ## Data access and storage
@@ -80,7 +48,7 @@ This repository is designed around a clear separation between:
 - derived outputs and summary products
 - figure generation
 
-Operationally, the project is intended to work with cloud-hosted CMIP7 outputs in an S3-compatible environment, while keeping the repository itself lightweight and portable. Bucket-specific paths and conventions should be tracked in `config/s3_paths.yml` instead of being hardcoded into analysis notebooks.
+Operationally, the project is intended to work with cloud-hosted CMIP7 outputs in an S3-compatible environment, while keeping the repository itself lightweight and portable. Bucket-specific paths and access notes should be documented in the notebook workflow and configuration files rather than hard-coded into analysis outputs.
 
 ## Using UV
 
@@ -125,9 +93,22 @@ uv run python scripts/preprocessing/example_script.py
 - Document data provenance and processing steps in `docs/` or notebook markdown cells.
 - Keep configuration paths (including S3 locations) in `config/`.
 
+## Contributing
+
+Contributions are welcome as this project grows. This section is intentionally lightweight for now, but the expectation is that contributors will help improve the shared CMIP7 workflows and keep the repository easy to use for others.
+
+Suggested workflow:
+- open an issue to propose a new notebook, data-access workflow, or plotting idea
+- create a branch for your change
+- keep notebook content focused and well documented
+- prefer clear, reproducible code over one-off analysis steps
+- submit a pull request with a short description of the change and any assumptions
+
+If you are adding new analysis or plotting notebooks, follow the existing structure and keep the repository’s early workflow simple and readable.
+
 ## Collaboration notes
 
-This repository is intended to support a collaborative workflow with SIMIP contributors and other partners working on CMIP7 sea ice diagnostics. The structure is designed to be open to shared analysis, but still maintain clear conventions for data handling, plotting, and output generation.
+This repository is intended to support a collaborative workflow with SIMIP contributors and other partners working on CMIP7 sea ice diagnostics. The structure is designed to be open to shared analysis, common data-access routines, and reproducible figure generation.
 
 ## License
 
