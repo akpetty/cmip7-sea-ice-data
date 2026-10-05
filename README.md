@@ -52,37 +52,27 @@ Operationally, the project is intended to work with cloud-hosted CMIP7 outputs i
 
 ## Using UV
 
-This project is configured for a lightweight Python workflow using `uv`.
+The project environment and Python dependency list are managed in `pyproject.toml`. This is the canonical place where package information is stored and updated for the UV workflow.
 
-### Install
+For the normal developer workflow, use the project environment directly:
 
 ```bash
 uv sync
+source .venv/bin/activate
+jupyter lab
 ```
 
-### Create a virtual environment
+This creates the virtual environment, activates it in your current shell, and lets you run Python, notebooks, and scripts as usual. If you prefer, you can also run commands without activating the environment first:
 
 ```bash
-uv venv
-source .venv/bin/activate
+uv run jupyter lab
+uv run python scripts/preprocessing/example_script.py
 ```
 
 ### Add a dependency
 
 ```bash
 uv add xarray netcdf4 dask matplotlib
-```
-
-### Run a notebook or script
-
-```bash
-uv run jupyter lab
-```
-
-or
-
-```bash
-uv run python scripts/preprocessing/example_script.py
 ```
 
 ## Working conventions
