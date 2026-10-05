@@ -1,19 +1,25 @@
 # CMIP7 Sea Ice Data
 
-A collaborative repository for wrangling and analyzing CMIP7 sea ice output in partnership with members of SIMIP.
+
+
+A collaborative repository for wrangling and analyzing CMIP7 sea ice output in partnership with members of the Sea Ice Model Intercomparison Project (SIMIP).
 
 This project is intended to support reproducible workflows for:
 - discovering and accessing CMIP7 sea-ice model output
-- preprocessing and quality-control on model data products
-- exploratory analysis in notebooks
-- diagnostic summaries and comparison workflows
-- figure generation for reports, papers, and working-group outputs
+- preprocessing and quality-control on model outputs (ensuring consistency and vetting of outputs).
+- diagnostic summaries of data availability and applied corrections/fixes.
+- exploratory data analysis with Jupyter Notebooks
+- potential figure generation 
 
 ## History
 
-This repository was created to help SIMIP contributors work with CMIP7 sea ice data in a consistent and reproducible way. The initial focus is on making remote data access straightforward and providing a lightweight set of shared analysis and plotting workflows that can be adapted for collaborative diagnostics.
+This repository was created to facilitate efforts around data wrangling and processing to support CMIP7 sea ice data analysis. The initial focus is on making data access straightforward and providing a lightweight set of shared analysis and plotting workflows that can be adapted for collaborative diagnostics.
 
-The project is intentionally lightweight and exploratory at this stage: most work is centered on notebooks, reproducible data-access checks, and shared plotting patterns rather than a large package API.
+The project is intentionally lightweight and exploratory at this stage: most work is centered on notebooks, reproducible data-access checks, and shared plotting options.
+
+V0.1: October 5, 2026.
+ - Initial template
+
 
 ## Repository structure
 
@@ -43,23 +49,22 @@ cmip7-sea-ice-data/
 ## Data access and storage
 
 This repository is designed around a clear separation between:
-- source data access
-- local processing and QC workflows
-- derived outputs and summary products
-- figure generation
+- source/raw CMIP data access
+- local processing, QC and generating derived datasets.
+- uploads and access of derived data through AWS S3 buckets.
 
-Operationally, the project is intended to work with cloud-hosted CMIP7 outputs in an S3-compatible environment, while keeping the repository itself lightweight and portable. Bucket-specific paths and access notes should be documented in the notebook workflow and configuration files rather than hard-coded into analysis outputs.
+Operationally, the project is intended to work with both the raw (ESGF) and derived (AWS S3) datasets locally or on the cloud. The access of the S3 derived datasets should be much quicker/efficient if also working on the cloud. We are carrying out the initial effort and testing on a NASA-supported AWS Jupyter Hub (US-West-2)
 
 ## Using UV
 
-The project environment and Python dependency list are managed in `pyproject.toml`. This is the canonical place where package information is stored and updated for the UV workflow.
+The project environment and Python dependency list are managed in `pyproject.toml`. This is where package information is stored and updated for the UV workflow.
 
 For the normal developer workflow, use the project environment directly:
 
 ```bash
 uv sync
 source .venv/bin/activate
-jupyter lab
+python scripts/preprocessing/example_script.py
 ```
 
 This creates the virtual environment, activates it in your current shell, and lets you run Python, notebooks, and scripts as usual. If you prefer, you can also run commands without activating the environment first:
@@ -72,7 +77,7 @@ uv run python scripts/preprocessing/example_script.py
 ### Add a dependency
 
 ```bash
-uv add xarray netcdf4 dask matplotlib
+uv add matplotlib
 ```
 
 ## Working conventions
@@ -85,11 +90,11 @@ uv add xarray netcdf4 dask matplotlib
 
 ## Contributing
 
-Contributions are welcome as this project grows. This section is intentionally lightweight for now, but the expectation is that contributors will help improve the shared CMIP7 workflows and keep the repository easy to use for others.
+Contributions are welcome as this project grows. This repo is intentionally lightweight for now, but the expectation is that contributors will help improve the CMIP7 workflows and keep the repository easy to use for others.
 
 Suggested workflow:
 - open an issue to propose a new notebook, data-access workflow, or plotting idea
-- create a branch for your change
+- create a branch for your proposed change
 - keep notebook content focused and well documented
 - prefer clear, reproducible code over one-off analysis steps
 - submit a pull request with a short description of the change and any assumptions
