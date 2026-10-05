@@ -28,13 +28,14 @@ env/
 .DS_Store
 Thumbs.db
 
+# Local scratch workspace for temporary notebooks, exploratory outputs, and one-off files
+scratch/
+
 # Project-specific generated content
-results/figures/*.png
-results/figures/*.pdf
+# Keep the repository friendly to committed figures and reports, while ignoring only temporary scratch outputs.
 results/outputs/*
 
 # Keep directories but ignore generated files
-!results/figures/.gitkeep
 !results/outputs/.gitkeep
 !results/summaries/.gitkeep
 
