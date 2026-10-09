@@ -1,6 +1,6 @@
 # Ancillary data
 
-Small static files used by the loading and preprocessing code. They are tracked in git and loaded by `scripts/data_access/ancillary.py`.
+Small static files used by the loading and preprocessing code. They are loaded by `scripts/data_access/ancillary.py`.
 
 | Folder | File | Contents | Used for |
 |---|---|---|---|
