@@ -858,7 +858,7 @@ class CMIP6():
     def __init__(self, variable, experiment_id, compare_exp=None, source_id='all', sector_mean=None,sector_sum=None, members=None,time_chunks=None,
                  grid_label=['gn'], new_grid=None, method='conservative_normed',client=False,sic_mask=None,verbose=False,skip_sids=None,table_id=None,
                  end_year=None,
-                 esgf_url='https://esgf-node.llnl.gov/esg-search',
+                 esgf_url='https://esgf-node.ornl.gov/esg-search',
                  cat_url="https://cmip6-pds.s3.amazonaws.com/pangeo-cmip6.json",
                  cat_url2="https://storage.googleapis.com/cmip6/cmip6-pgf-ingestion-test/catalog/catalog.json"):
         """Store the search/processing options and open the cloud (cat_url, cat_url2) and ESGF
