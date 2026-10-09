@@ -15,8 +15,6 @@ This project is intended to support reproducible workflows for:
 
 ## History
 
-This repository was created to facilitate efforts around data wrangling and processing to support CMIP7 sea ice data analysis. The initial focus is on making data access straightforward and providing [...]
-
 The project is intentionally lightweight and exploratory at this stage: most work is centered on notebooks, reproducible data-access checks, and shared plotting options.
 
 V0.1: October 5, 2026.
